@@ -71,8 +71,10 @@
     }
 
     .layout {
+        min-height: calc(100dvh - 2 * 0.75rem);
         display: grid;
         gap: 1em;
+        grid-template-rows: min-content auto min-content;
         grid-template-areas:
             "header"
             "nav"
@@ -97,7 +99,7 @@
     
     @media (min-width: 980px) {
        .layout {
-            grid-template-columns: 200px auto 400px;
+            grid-template-columns: 200px auto 300px;
             grid-template-areas:
                 "header header header"
                 "nav main aside"
