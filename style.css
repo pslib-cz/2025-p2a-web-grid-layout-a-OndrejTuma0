@@ -70,10 +70,19 @@
         grid-area: footer;
     }
 
+    .layout {
+        display: grid;
+        gap: 1em;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+    }
+
     @media (min-width: 768px) {
         .layout {
-            display: grid;
-            gap: 1em;
             grid-template-columns: auto 200px;
             grid-template-areas:
                 "header header"
@@ -81,18 +90,21 @@
                 "aside nav"
                 "footer footer";
         }
+        .layout__nav {
+            align-self: start;
+        }
     }
     
     @media (min-width: 980px) {
        .layout {
-            display: grid;
-            gap: 1em;
-            grid-template-columns: auto 400px;
+            grid-template-columns: 200px auto 400px;
             grid-template-areas:
-                "header header"
-                "main nav"
-                "main aside"
-                "footer footer";
+                "header header header"
+                "nav main aside"
+                "footer footer footer";
+        }
+        .layout__nav {
+            align-self: initial;
         }
     }
 }
